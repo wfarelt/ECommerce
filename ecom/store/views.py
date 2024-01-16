@@ -11,3 +11,7 @@ def home(request):
 
 def about(request):
     return render(request, 'about.html')
+
+def product_detail(request, pk):
+    product = Product.objects.get(pk=pk)
+    return render(request, 'product_detail.html', {'product': product})
